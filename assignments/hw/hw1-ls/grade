@@ -1,4 +1,44 @@
  0    / 100  
 
+-100: doesn't work on hammer:
+bin/ls: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.18' not found (required by bin/ls)
+bin/ls: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.5' not found (required by bin/ls)
+bin/ls: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.14' not found (required by bin/ls)
+
+-5x3: no error checking for syscalls (-5 for each syscall, see checksyscalls output)
+
+
+
+
+
+checksyscalls output:
+
+file: [src/ls.cpp]
+  lines with syscalls:
+  
+  109:  [1;32m[Kperror()[m[K;
+  156:  [1;31m[K getpwuid(buf->st_uid)[m[K
+  160:  [1;32m[Kperror()[m[K;
+  163:  [1;31m[K getgrgid(buf->st_gid)[m[K
+  165:  [1;32m[Kperror()[m[K;
+  174:  [1;31m[K(stat(fpath, &buf)[m[K
+  175:  [1;32m[Kperror()[m[K;
+  186:  [1;31m[K(stat(x, &buf)[m[K
+  187:  [1;32m[Kperror()[m[K; \
+  192:  [1;31m[K(stat(temppah.c_str()[m[K
+  193:  [1;32m[Kperror()[m[K; \
+  199:  [1;31m[K opendir(pathn.c_str()[m[K
+  201:  [1;32m[Kperror()[m[K;
+  208:  [1;31m[K readdir(dirp)[m[K
+  210:  [1;32m[Kperror()[m[K;
+  217:  [1;31m[K readdir(dirp)[m[K
+  255:  [1;31m[K(closedir(dirp)[m[K
+  256:  [1;32m[Kperror()[m[K;
+  265:  [1;31m[K opendir(pathn.c_str()[m[K
+  267:  [1;32m[Kperror()[m[K;
+  274:  [1;31m[K readdir(dirp)[m[K
+  276:  [1;32m[Kperror()[m[K;
+  283:  [1;31m[K readdir(dirp)[m[K
+  317:  [1;31m[K(closedir(dirp)[m[K
 
 
