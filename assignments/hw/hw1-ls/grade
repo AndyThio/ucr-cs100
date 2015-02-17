@@ -1,15 +1,10 @@
- 0    / 100  
-
--100: doesn't work on hammer:
-bin/ls: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.18' not found (required by bin/ls)
-bin/ls: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.5' not found (required by bin/ls)
-bin/ls: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.14' not found (required by bin/ls)
+95 / 100
 
 -5x3: no error checking for syscalls (-5 for each syscall, see checksyscalls output)
 
+-5: missing ordering test: -R -l, -Ral
 
-
-
++15: coloring works
 
 checksyscalls output:
 
@@ -40,5 +35,31 @@ file: [src/ls.cpp]
   276:  [1;32m[Kperror()[m[K;
   283:  [1;31m[K readdir(dirp)[m[K
   317:  [1;31m[K(closedir(dirp)[m[K
+  318:  [1;32m[Kperror()[m[K;
+  327:  [1;31m[K opendir(pathn.c_str()[m[K
+  329:  [1;32m[Kperror()[m[K;
+  336:  [1;31m[K readdir(dirp)[m[K
+  338:  [1;32m[Kperror()[m[K;
+  345:  [1;31m[K readdir(dirp)[m[K
+  370:  [1;31m[K(closedir(dirp)[m[K
+  371:  [1;32m[Kperror()[m[K;
+  380:  [1;31m[K opendir(pathn.c_str()[m[K
+  382:  [1;32m[Kperror()[m[K;
+  389:  [1;31m[K readdir(dirp)[m[K
+  391:  [1;32m[Kperror()[m[K;
+  398:  [1;31m[K readdir(dirp)[m[K
+  421:  [1;31m[K(closedir(dirp)[m[K
+  422:  [1;32m[Kperror()[m[K;
+  537:  [1;31m[K opendir(dirName)[m[K
+  539:  [1;32m[Kperror()[m[K;
+  546:  [1;31m[K readdir(dirp)[m[K
+  548:  [1;32m[Kperror()[m[K;
+  555:  [1;31m[K readdir(dirp)[m[K
+  666:  [1;32m[Kperror()[m[K;
+  670:  [1;31m[K(closedir(dirp)[m[K
+  671:  [1;32m[Kperror()[m[K;
 
-
+summary:
+  number of syscalls... 25
+  number of perror..... 22
+  grade modifier....... -15
